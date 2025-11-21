@@ -1,0 +1,72 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+/* Modern Input Field Styles */
+#UsernameField, #PasswordField {
+    -fx-background-color: linear-gradient(to bottom, #ffffff, #f8f9fa);
+    -fx-background-radius: 12;
+    -fx-border-color: #e0e3e7;
+    -fx-border-width: 2;
+    -fx-border-radius: 12;
+    -fx-font-size: 14px;
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+    -fx-padding: 0 15 0 15;
+    -fx-prompt-text-fill: #6c757d;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 4, 0.2, 0, 2);
+    -fx-cursor: text;
+}
+
+#UsernameField:focused, #PasswordField:focused {
+    -fx-border-color: #1877F2;
+    -fx-background-color: linear-gradient(to bottom, #ffffff, #ffffff);
+    -fx-effect: dropshadow(gaussian, rgba(24,119,242,0.3), 8, 0.4, 0, 0);
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+#UsernameField:hover, #PasswordField:hover {
+    -fx-border-color: #4285f4;
+    -fx-background-color: linear-gradient(to bottom, #ffffff, #fdfdfd);
+}
+
+/* Enhanced Login Button Animation Styles */
+#loginButton {
+    -fx-background-color: linear-gradient(to bottom, #1877F2, #166FE5);
+    -fx-background-radius: 15;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(24,119,242,0.4), 8, 0.5, 0, 4);
+    -fx-text-fill: white;
+    -fx-border-color: transparent;
+}
+
+#loginButton:hover {
+    -fx-background-color: linear-gradient(to bottom, #166FE5, #1557C7);
+    -fx-effect: dropshadow(gaussian, rgba(24,119,242,0.6), 12, 0.6, 0, 6);
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+#loginButton:pressed {
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+    -fx-background-color: linear-gradient(to bottom, #1557C7, #1348A8);
+    -fx-effect: dropshadow(gaussian, rgba(24,119,242,0.3), 4, 0.3, 0, 2);
+}
+
+/* Icon Styles */
+.glyph-icon {
+    -fx-fill: #6c757d;
+}
+
+/* Status Label */
+#isConnected {
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+    -fx-text-fill: #6c757d;
+}
+
+/* Smooth transitions for all interactive elements */
+#UsernameField, #PasswordField, #loginButton {
+    -fx-transition: all 0.3s ease;
+}

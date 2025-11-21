@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.InventoryController">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <BorderPane layoutX="177.0" layoutY="184.0" prefHeight="750.0" prefWidth="1500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <left>
+                  <AnchorPane prefHeight="750.0" prefWidth="240.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutX="-142.0" layoutY="-10.0" prefHeight="750.0" prefWidth="240.0" style="-fx-background-color: #ffffff; -fx-border-color: #e5f3ff; -fx-border-width: 0 1 0 0;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <!-- Logo Section -->
+                              <ImageView fitHeight="170.0" fitWidth="170.0" layoutX="35.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/healthPoint.png" />
+                                 </image>
+                              </ImageView>
+                              
+                              <Button fx:id="inventorybutton" layoutX="20.0" layoutY="232.0" mnemonicParsing="false" onAction="#handleInventoryButton" prefHeight="48.0" prefWidth="200.0" style="-fx-background-color: #0ea5e9; -fx-text-fill: white; -fx-background-radius: 8; -fx-font-weight: 500; -fx-cursor: hand; -fx-border-width: 0;" text="Inventory">
+                                 <font>
+                                    <Font name="System" size="14.0" />
+                                 </font>
+                              </Button>
+                              
+                              <Button fx:id="orderbutton" layoutX="20.0" layoutY="304.0" mnemonicParsing="false" onAction="#handleOrderButton" prefHeight="48.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-text-fill: #64748b; -fx-background-radius: 8; -fx-font-weight: 500; -fx-cursor: hand; -fx-border-width: 0;" text="POS Terminal">
+                                 <font>
+                                    <Font name="System" size="14.0" />
+                                 </font>
+                              </Button>
+                              
+                              <!-- Logout Button -->
+                              <Button fx:id="logoutbutton" layoutX="20.0" layoutY="680.0" mnemonicParsing="false" onAction="#handleLogoutButton" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #ef4444; -fx-text-fill: white; -fx-background-radius: 8; -fx-font-weight: 500; -fx-cursor: hand; -fx-border-width: 0;" text="Logout" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="System" size="14.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </left>
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #f8fafc;" BorderPane.alignment="CENTER">
+                     <children>
+
+                        <!-- Form Section -->
+                        <AnchorPane layoutX="20.0" layoutY="20.0" prefHeight="280.0" prefWidth="600.0" style="-fx-background-color: #ffffff; -fx-background-radius: 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 10, 0, 0, 2);">
+                           <children>
+                              <Label layoutX="25.0" layoutY="15.0" style="-fx-font-weight: 600; -fx-text-fill: #1e293b;" text="Product Information">
+                                 <font>
+                                    <Font name="System" size="18.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontIcon iconLiteral="bi-info-square" iconSize="20" />
+                                 </graphic>
+                              </Label>
+                              
+                              <!-- Product ID -->
+                              <Label layoutX="25.0" layoutY="50.0" style="-fx-text-fill: #64748b; -fx-font-weight: 500;" text="Product ID:">
+                                 <font>
+                                    <Font name="System" size="13.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="productIdField" editable="false" layoutX="25.0" layoutY="70.0" prefHeight="32.0" prefWidth="160.0" promptText="Auto-generated" style="-fx-background-color: #f1f5f9; -fx-border-color: #e2e8f0; -fx-border-radius: 8; -fx-border-width: 1; -fx-background-radius: 8;">
+                                 <font>
+                                    <Font name="System" size="13.0" />
+                                 </font>
+                              </TextField>
+                              
+                              <!-- Product Name -->
+                              <Label layoutX="205.0" layoutY="50.0" style="-fx-text-fill: #64748b; -fx-font-weight: 500;" text="Product Name:">
+                                 <font>
+                                    <Font name="System" size="13.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="productNameField" layoutX="205.0" layoutY="70.0" prefHeight="32.0" prefWidth="180.0" promptText="Enter product name" style="-fx-background-color: #ffffff; -fx-border-color: #e2e8f0; -fx-border-radius: 8; -fx-border-width: 1; -fx-background-radius: 8;">
+                                 <font>
+                                    <Font name="System" size="13.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="TEXT" />
+                                 </cursor>
+                              </TextField>
+                              
+                              <!-- Category -->
+                              <Label layoutX="405.0" layoutY="50.0" style="-fx-text-fill: #64748b; -fx-font-weight: 500;" text="Category:">
+                                 <font>
+                                    <Font name="System" size="13.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="categoryComboBox" layoutX="405.0" layoutY="70.0" prefHeight="32.0" prefWidth="160.0" promptText="Select category" style="-fx-background-color: #ffffff; -fx-border-color: #e2e8f0; -fx-border-radius: 8; -fx-background-radius: 8;">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></ComboBox>
+                              
+                              <!-- Price -->
+                              <Label layoutX="25.0" layoutY="115.0" style="-fx-text-fill: #64748b; -fx-font-weight: 500;" text="Price (₱):">
+                                 <font>
+                                    <Font name="System" size="13.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="priceField" layoutX="25.0" layoutY="135.0" prefHeight="32.0" prefWidth="160.0" promptText="0.00" style="-fx-background-color: #ffffff; -fx-border-color: #e2e8f0; -fx-border-radius: 8; -fx-border-width: 1; -fx-background-radius: 8;">
+                                 <font>
+                                    <Font name="System" size="13.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="TEXT" />
+                                 </cursor>
+                              </TextField>
+                              
+                              <!-- Stock Quantity -->
+                              <Label layoutX="205.0" layoutY="115.0" style="-fx-text-fill: #64748b; -fx-font-weight: 500;" text="Stock Quantity:">
+                                 <font>
+                                    <Font name="System" size="13.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="stockField" layoutX="205.0" layoutY="135.0" prefHeight="32.0" prefWidth="180.0" promptText="Enter quantity" style="-fx-background-color: #ffffff; -fx-border-color: #e2e8f0; -fx-border-radius: 8; -fx-border-width: 1; -fx-background-radius: 8;">
+                                 <font>
+                                    <Font name="System" size="13.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="TEXT" />
+                                 </cursor>
+                              </TextField>
+                              
+                              <!-- Status -->
+                              <Label layoutX="405.0" layoutY="115.0" style="-fx-text-fill: #64748b; -fx-font-weight: 500;" text="Status:">
+                                 <font>
+                                    <Font name="System" size="13.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="statusComboBox" layoutX="405.0" layoutY="135.0" prefHeight="32.0" prefWidth="160.0" promptText="Select status" style="-fx-background-color: #ffffff; -fx-border-color: #e2e8f0; -fx-border-radius: 8; -fx-background-radius: 8;">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></ComboBox>
+                              
+                              <!-- Action Buttons -->
+                              <Button fx:id="addButton" layoutX="25.0" layoutY="195.0" mnemonicParsing="false" onAction="#handleAddProduct" prefHeight="35.0" prefWidth="110.0" style="-fx-background-color: #0ea5e9; -fx-text-fill: white; -fx-background-radius: 8; -fx-cursor: hand; -fx-border-width: 0; -fx-font-weight: 500;" text="Add">
+                                 <font>
+                                    <Font name="System" size="13.0" />
+                                 </font>
+                              </Button>
+                              
+                              <Button fx:id="clearButton" layoutX="170.0" layoutY="195.0" mnemonicParsing="false" onAction="#handleClearForm" prefHeight="35.0" prefWidth="110.0" style="-fx-background-color: #64748b; -fx-text-fill: white; -fx-background-radius: 8; -fx-cursor: hand; -fx-border-width: 0; -fx-font-weight: 500;" text="Clear">
+                                 <font>
+                                    <Font name="System" size="13.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                  
+                        <!-- Product Image Section -->
+                        <AnchorPane layoutX="640.0" layoutY="20.0" prefHeight="280.0" prefWidth="600.0" style="-fx-background-color: #ffffff; -fx-background-radius: 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 10, 0, 0, 2);">
+                           <children>
+                              <Label layoutX="25.0" layoutY="15.0" style="-fx-font-weight: 600; -fx-text-fill: #1e293b;" text="Product Image">
+                                 <font>
+                                    <Font name="System" size="18.0" />
+                                 </font>
+                              </Label>
+                              
+                                                <ImageView fx:id="productImageView" fitHeight="160.0" fitWidth="180.0" layoutX="210.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: #f8fafc; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 8, 0, 0, 2);">
+                                 <image>
+                                    <Image url="@../images/addimage.png" />
+                                 </image>
+                              </ImageView>
+                              
+                                                <Button fx:id="selectImageButton" layoutX="420.0" layoutY="90.0" mnemonicParsing="false" onAction="#handleSelectImage" prefHeight="35.0" prefWidth="140.0" style="-fx-background-color: #0ea5e9; -fx-text-fill: white; -fx-background-radius: 8; -fx-cursor: hand; -fx-border-width: 0; -fx-font-weight: 500;" text="Select Image">
+                                 <font>
+                                    <Font name="System" size="13.0" />
+                                 </font>
+                              </Button>
+                              
+                                                <Button fx:id="removeImageButton" layoutX="420.0" layoutY="140.0" mnemonicParsing="false" onAction="#handleRemoveImage" prefHeight="35.0" prefWidth="140.0" style="-fx-background-color: #64748b; -fx-text-fill: white; -fx-background-radius: 8; -fx-cursor: hand; -fx-border-width: 0; -fx-font-weight: 500;" text="Remove Image">
+                                 <font>
+                                    <Font name="System" size="13.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="refreshButton" layoutX="500.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleRefreshButton" prefHeight="22.0" prefWidth="85.0" style="-fx-background-color: YELLOW; -fx-text-fill: BLACK; -fx-background-radius: 8; -fx-cursor: hand; -fx-border-width: 0; -fx-font-weight: 500;" text="Refresh">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+
+                        <!-- Table Section -->
+                        <AnchorPane layoutX="20.0" layoutY="320.0" prefHeight="410.0" prefWidth="1220.0" style="-fx-background-color: #ffffff; -fx-background-radius: 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 10, 0, 0, 2);">
+                           <children>
+                              <Label layoutX="14.0" layoutY="12.0" style="-fx-font-weight: 600; -fx-text-fill: #1e293b;" text="Product Lists">
+                                 <font>
+                                    <Font name="System" size="18.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontIcon iconLiteral="bi-list-check" iconSize="20" />
+                                 </graphic>
+                              </Label>
+                              
+                              <TableView fx:id="productsTable" layoutX="7.0" layoutY="40.0" prefHeight="365.0" prefWidth="1206.0" style="-fx-background-color: #ffffff; -fx-border-color: #e2e8f0; -fx-border-radius: 8; -fx-border-width: 1; -fx-background-radius: 8;">
+                                 <columns>
+                                    <TableColumn fx:id="idColumn" prefWidth="70.0" text="ID" />
+                                    <TableColumn fx:id="imageColumn" prefWidth="100.0" text="Image" />
+                                    <TableColumn fx:id="nameColumn" prefWidth="220.0" text="Product Name" />
+                                    <TableColumn fx:id="statusColumn" prefWidth="120.0" text="Status" />
+                                    <TableColumn fx:id="stockColumn" prefWidth="120.0" text="Stock" />
+                                    <TableColumn fx:id="categoryColumn" prefWidth="150.0" text="Category" />
+                                    <TableColumn fx:id="priceColumn" prefWidth="130.0" text="Price (₱)" />
+                                    <TableColumn fx:id="dateColumn" prefWidth="160.0" text="Date Added" />
+                                    <TableColumn fx:id="actionsColumn" minWidth="20.0" prefWidth="130.0" text="Actions" />
+                                 </columns>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

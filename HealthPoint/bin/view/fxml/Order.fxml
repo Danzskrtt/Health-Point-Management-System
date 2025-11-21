@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.OrderController">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <BorderPane layoutX="177.0" layoutY="184.0" prefHeight="750.0" prefWidth="1500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <left>
+                  <AnchorPane prefHeight="750.0" prefWidth="240.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutX="-142.0" layoutY="-10.0" prefHeight="750.0" prefWidth="240.0" style="-fx-background-color: #ffffff; -fx-border-color: #e5f3ff; -fx-border-width: 0 1 0 0;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <!-- Logo Section -->
+                              <ImageView fitHeight="170.0" fitWidth="170.0" layoutX="35.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/healthPoint.png" />
+                                 </image>
+                              </ImageView>
+                              
+                              <Button fx:id="inventoryButton" layoutX="20.0" layoutY="232.0" mnemonicParsing="false" onAction="#handleInventoryButton" prefHeight="48.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-text-fill: #64748b; -fx-background-radius: 8; -fx-font-weight: 500; -fx-cursor: hand; -fx-border-width: 0;" text="Inventory">
+                                 <font>
+                                    <Font name="System" size="14.0" />
+                                 </font>
+                              </Button>
+                              
+                              <Button fx:id="orderButton" layoutX="20.0" layoutY="304.0" mnemonicParsing="false" onAction="#handleOrderButton" prefHeight="48.0" prefWidth="200.0" style="-fx-background-color: #0ea5e9; -fx-text-fill: white; -fx-background-radius: 8; -fx-font-weight: 500; -fx-cursor: hand; -fx-border-width: 0;" text="POS Terminal">
+                                 <font>
+                                    <Font name="System" size="14.0" />
+                                 </font>
+                              </Button>
+                              
+                              <!-- Logout Button -->
+                              <Button fx:id="logoutButton" layoutX="20.0" layoutY="680.0" mnemonicParsing="false" onAction="#handleLogoutButton" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #ef4444; -fx-text-fill: white; -fx-background-radius: 8; -fx-font-weight: 500; -fx-cursor: hand; -fx-border-width: 0;" text="Logout" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="System" size="14.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </left>
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #f8fafc;" BorderPane.alignment="CENTER">
+                     <children>
+
+                        <!-- Search and Filter Section -->
+                        <AnchorPane layoutX="15.0" layoutY="10.0" prefHeight="70.0" prefWidth="735.0" style="-fx-background-color: #ffffff; -fx-background-radius: 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 10, 0, 0, 2);">
+                           <children>
+                       
+                              <TextField fx:id="medicationSearchField" layoutX="20.0" layoutY="13.0" prefHeight="44.0" prefWidth="340.0" promptText="Search Product..." style="-fx-background-color: #ffffff; -fx-border-color: #e2e8f0; -fx-border-radius: 8; -fx-border-width: 1; -fx-background-radius: 8;">
+                                 <font>
+                                    <Font name="System" size="14.0" />
+                                 </font>
+                              </TextField>
+                              
+                              <ComboBox fx:id="medicationCategoryFilter" layoutX="375.0" layoutY="13.0" prefHeight="44.0" prefWidth="160.0" promptText="All Categories" style="-fx-background-color: #ffffff; -fx-border-color: #e2e8f0; -fx-border-radius: 8; -fx-background-radius: 8;">
+                              </ComboBox>
+                              
+                              <Button fx:id="clearFilterButton" layoutX="551.0" layoutY="13.0" mnemonicParsing="false" onAction="#handleClearFilter" prefHeight="44.0" prefWidth="120.0" style="-fx-background-color: #64748b; -fx-text-fill: white; -fx-background-radius: 8; -fx-cursor: hand; -fx-border-width: 0; -fx-font-weight: 500;" text="Clear">
+                                 <font>
+                                    <Font name="System" size="13.0" />
+                                 </font>
+                              </Button>
+                              <FontIcon iconLiteral="bi-search" iconSize="20" layoutX="331.0" layoutY="45.0" />
+                           </children>
+                        </AnchorPane>
+
+                        <!-- Products Grid Section -->
+                        <AnchorPane layoutX="15.0" layoutY="92.0" prefHeight="648.0" prefWidth="735.0" style="-fx-background-color: #ffffff; -fx-background-radius: 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 10, 0, 0, 2);">
+                           <children>
+                              
+                                    <ScrollPane fx:id="medicationScrollPane" hbarPolicy="NEVER" layoutX="12.0" layoutY="13.0" prefHeight="620.0" prefWidth="710.0" style="-fx-background-color: transparent; -fx-background: transparent;" vbarPolicy="AS_NEEDED">
+                                 <content>
+                                    <FlowPane fx:id="medicationCardsContainer" alignment="CENTER" hgap="25.0" prefWidth="710.0" style="-fx-background-color: transparent; -fx-padding: 10;" vgap="20.0" />
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </AnchorPane>
+
+                        <!-- Cart Section -->
+                        <AnchorPane layoutX="761.0" layoutY="10.0" prefHeight="730.0" prefWidth="485.0" style="-fx-background-color: #ffffff; -fx-background-radius: 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 10, 0, 0, 2);">
+                           <children>
+                              <Label layoutX="157.0" layoutY="14.0" style="-fx-font-weight: 600; -fx-text-fill: #1e293b;" text="Transaction Summary">
+                                 <font>
+                                    <Font name="System" size="18.0" />
+                                 </font>
+                              </Label>
+                              
+                              <TableView fx:id="prescriptionCartTable" layoutX="20.0" layoutY="50.0" prefHeight="410.0" prefWidth="446.0" style="-fx-background-color: #ffffff; -fx-border-color: #e2e8f0; -fx-border-radius: 8; -fx-border-width: 1; -fx-background-radius: 8;">
+                                 <columns>
+                                    <TableColumn fx:id="cartMedicationColumn" prefWidth="140.0" text="Product" />
+                                    <TableColumn fx:id="cartPriceColumn" prefWidth="75.0" text="Price" />
+                                    <TableColumn fx:id="cartQuantityColumn" prefWidth="50.0" text="Qty" />
+                                    <TableColumn fx:id="cartTotalColumn" prefWidth="85.0" text="Total" />
+                                    <TableColumn fx:id="cartActionColumn" prefWidth="95.0" text="Actions" />
+                                 </columns>
+                              </TableView>
+                            
+                              <!-- Customer Information -->
+                              <Label layoutX="14.0" layoutY="496.0" prefWidth="104.0" style="-fx-text-fill: #64748b; -fx-font-weight: 500;" text="Customer Name:">
+                                 <font>
+                                    <Font name="System" size="14.0" />
+                                 </font>
+                              </Label>
+                              
+                              <TextField fx:id="patientNameField" layoutX="14.0" layoutY="524.0" prefHeight="35.0" prefWidth="190.0" promptText="Enter customer name" style="-fx-background-color: #ffffff; -fx-border-color: #e2e8f0; -fx-border-radius: 8; -fx-border-width: 1; -fx-background-radius: 8;">
+                                 <font>
+                                    <Font name="System" size="14.0" />
+                                 </font>
+                              </TextField>
+                              
+                              <!-- Payment Method -->
+                              <Label layoutX="14.0" layoutY="586.0" style="-fx-text-fill: #64748b; -fx-font-weight: 500;" text="Payment Method:">
+                                 <font>
+                                    <Font name="System" size="14.0" />
+                                 </font>
+                              </Label>
+                              
+                              <ComboBox fx:id="paymentMethodComboBox" layoutX="14.0" layoutY="611.0" prefHeight="46.0" prefWidth="190.0" promptText="Select payment method" style="-fx-background-color: #ffffff; -fx-border-color: #e2e8f0; -fx-border-radius: 8; -fx-background-radius: 8;">
+                              </ComboBox>
+                              
+                              <!-- Total Amount Display -->
+                              <Label layoutX="221.0" layoutY="493.0" style="-fx-text-fill: #64748b; -fx-font-weight: 500;" text="Total Amount:">
+                                 <font>
+                                    <Font name="System" size="16.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="prescriptionTotalField" editable="false" layoutX="221.0" layoutY="524.0" prefHeight="60.0" prefWidth="250.0" promptText="₱0.00" style="-fx-background-color: #f0f9ff; -fx-border-color: #0ea5e9; -fx-border-radius: 8; -fx-border-width: 2; -fx-background-radius: 8; -fx-text-fill: #0ea5e9; -fx-alignment: center;">
+                                 <font>
+                                    <Font name="System Bold" size="28.0" />
+                                 </font>
+                              </TextField>
+                              
+                              <!-- Action Buttons -->
+                              <Button fx:id="processPrescriptionButton" layoutX="221.0" layoutY="611.0" mnemonicParsing="false" onAction="#handlePlaceOrder" prefHeight="45.0" prefWidth="250.0" style="-fx-background-color: #059669; -fx-text-fill: white; -fx-background-radius: 8; -fx-cursor: hand; -fx-border-width: 0; -fx-font-weight: 600;" text="Place Order">
+                                 <font>
+                                    <Font name="System" size="16.0" />
+                                 </font>
+                              </Button>
+                              
+                              <Button fx:id="clearCartButton" layoutX="221.0" layoutY="670.0" mnemonicParsing="false" onAction="#handleClearCart" prefHeight="45.0" prefWidth="250.0" style="-fx-background-color: #ef4444; -fx-text-fill: white; -fx-background-radius: 8; -fx-cursor: hand; -fx-border-width: 0; -fx-font-weight: 500;" text="Clear Order">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
