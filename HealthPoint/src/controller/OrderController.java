@@ -396,9 +396,9 @@ public class OrderController implements Initializable {
                     
                     if (productCard instanceof javafx.scene.layout.Region) {
                         javafx.scene.layout.Region cardRegion = (javafx.scene.layout.Region) productCard;
-                        cardRegion.setPrefSize(280, 400); 
-                        cardRegion.setMaxSize(280, 400);
-                        cardRegion.setMinSize(280, 400);
+                        cardRegion.setPrefSize(230, 330); 
+                        cardRegion.setMaxSize(230, 330);
+                        cardRegion.setMinSize(230, 330);
                     }
                     
                     medicationCardsContainer.getChildren().add(productCard);
@@ -452,9 +452,9 @@ public class OrderController implements Initializable {
                         // Use consistent sizing with loadProductCards
                         if (productCard instanceof javafx.scene.layout.Region) {
                             javafx.scene.layout.Region cardRegion = (javafx.scene.layout.Region) productCard;
-                            cardRegion.setPrefSize(280, 400);
-                            cardRegion.setMaxSize(280, 400);
-                            cardRegion.setMinSize(280, 400);
+                            cardRegion.setPrefSize(230, 330);
+                            cardRegion.setMaxSize(230, 330);
+                            cardRegion.setMinSize(230, 330);
                         }
                         
                         medicationCardsContainer.getChildren().add(productCard);
